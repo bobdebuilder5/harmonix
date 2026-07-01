@@ -88,6 +88,64 @@
       color: #999;
     }
 
+    /* Social Media Icons Styles */
+    .social-icons {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 50%;
+      color: #000;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      animation: bounce 2s infinite;
+      text-decoration: none;
+    }
+
+    .social-icon:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .social-icon:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .social-icon:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .social-icon:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 14px rgba(255, 64, 129, 0.5);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
     main {
       padding: 40px;
       text-align: center;
@@ -143,6 +201,22 @@
   </style>
 </head>
 <body>
+  <!-- Social Media Icons -->
+  <div class="social-icons">
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="social-icon" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+
   <nav>
     <h1><i class="fas fa-music"></i> Harmonix</h1>
     <ul>
