@@ -51,6 +51,20 @@
 
     .search-container {
       position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-icon {
+      color: #ff4081;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .search-icon:hover {
+      color: #fff;
     }
 
     #search {
@@ -138,6 +152,7 @@
       <li><a href="#" onclick="showPage('collections')"><i class="fas fa-compact-disc"></i> Collections</a></li>
     </ul>
     <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
       <input type="text" id="search" placeholder="Let's dive in ....">
     </div>
   </nav>
@@ -189,6 +204,11 @@
     const searchInput = document.getElementById('search');
     searchInput.addEventListener('input', (e) => {
       filterButtons(e.target.value.toLowerCase());
+    });
+
+    // Focus search input when search icon is clicked
+    document.querySelector('.search-icon').addEventListener('click', () => {
+      searchInput.focus();
     });
 
     function filterButtons(query) {
