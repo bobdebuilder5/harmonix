@@ -146,6 +146,46 @@
       }
     }
 
+    /* Hero Section Styles */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 64, 129, 0.3)), 
+                  url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=400&fit=crop') center/cover no-repeat;
+      padding: 80px 40px;
+      text-align: center;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(255, 64, 129, 0.3);
+      animation: slideInDown 0.8s ease;
+    }
+
+    .hero-section h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #fff;
+      margin: 0 0 15px 0;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 24px;
+      color: #ff4081;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     main {
       padding: 40px;
       text-align: center;
@@ -230,6 +270,12 @@
       <input type="text" id="search" placeholder="Let's dive in ....">
     </div>
   </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>HARMONIX</h1>
+    <p>A new way to play....</p>
+  </div>
 
   <main>
     <section id="home" class="active">
