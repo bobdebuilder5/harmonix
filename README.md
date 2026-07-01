@@ -54,16 +54,24 @@
     }
 
     #search {
-      width: 10%;
+      width: 5%;
       transition: width 0.4s ease;
-      padding: 8px;
+      padding: 8px 12px;
       border-radius: 20px;
       border: none;
       outline: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
     }
 
     #search:focus {
       width: 45%;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+    }
+
+    #search::placeholder {
+      color: #999;
     }
 
     main {
@@ -111,6 +119,10 @@
       background: #f50057;
     }
 
+    button.hidden {
+      display: none;
+    }
+
     button i {
       font-size: 18px;
     }
@@ -134,29 +146,29 @@
     <section id="home" class="active">
       <h2><i class="fas fa-home"></i> Home</h2>
       <p>Discover trending tracks and curated playlists.</p>
-      <button onclick="playSound()"><i class="fas fa-play"></i> Play Sound</button>
-      <button onclick="stopSound()"><i class="fas fa-stop"></i> Stop Sound</button>
+      <button class="searchable" data-keywords="play sound music" onclick="playSound()"><i class="fas fa-play"></i> Play Sound</button>
+      <button class="searchable" data-keywords="stop sound pause" onclick="stopSound()"><i class="fas fa-stop"></i> Stop Sound</button>
     </section>
 
     <section id="you">
       <h2><i class="fas fa-user-circle"></i> You</h2>
       <p>Your personalized music space.</p>
-      <button><i class="fas fa-heart"></i> Your Favorites</button>
-      <button><i class="fas fa-list"></i> Your Playlists</button>
+      <button class="searchable" data-keywords="favorites heart liked"><i class="fas fa-heart"></i> Your Favorites</button>
+      <button class="searchable" data-keywords="playlists list"><i class="fas fa-list"></i> Your Playlists</button>
     </section>
 
     <section id="calendar">
       <h2><i class="fas fa-calendar-alt"></i> Event Calendar</h2>
       <p>Upcoming concerts and events.</p>
-      <button><i class="fas fa-star"></i> Featured Events</button>
-      <button><i class="fas fa-location-dot"></i> Near You</button>
+      <button class="searchable" data-keywords="featured events star"><i class="fas fa-star"></i> Featured Events</button>
+      <button class="searchable" data-keywords="near location dot"><i class="fas fa-location-dot"></i> Near You</button>
     </section>
 
     <section id="collections">
       <h2><i class="fas fa-compact-disc"></i> Collections</h2>
       <p>Browse curated collections of tracks.</p>
-      <button><i class="fas fa-fire"></i> Trending</button>
-      <button><i class="fas fa-music"></i> New Releases</button>
+      <button class="searchable" data-keywords="trending fire hot"><i class="fas fa-fire"></i> Trending</button>
+      <button class="searchable" data-keywords="new releases music"><i class="fas fa-music"></i> New Releases</button>
     </section>
   </main>
 
@@ -168,6 +180,30 @@
     function showPage(pageId) {
       document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
+      // Clear search when navigating
+      document.getElementById('search').value = '';
+      filterButtons('');
+    }
+
+    // Automated search functionality
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', (e) => {
+      filterButtons(e.target.value.toLowerCase());
+    });
+
+    function filterButtons(query) {
+      const buttons = document.querySelectorAll('button.searchable');
+
+      buttons.forEach(button => {
+        const keywords = button.dataset.keywords.toLowerCase();
+        const buttonText = button.textContent.toLowerCase();
+        
+        if (query === '' || keywords.includes(query) || buttonText.includes(query)) {
+          button.classList.remove('hidden');
+        } else {
+          button.classList.add('hidden');
+        }
+      });
     }
 
     // Howler.js demo
