@@ -54,19 +54,29 @@
       color: #ff4081;
     }
 
-    /* Search Container - Top Left with Horizontal Layout */
+    /* Search Container - Centered with Icon and Input */
     .search-container {
       position: fixed;
       top: 20px;
-      left: 20px;
+      left: 25%;
+      right: 25%;
       display: flex;
       align-items: center;
       gap: 12px;
       z-index: 1000;
+      width: 50%;
+      transform: translateX(0);
+    }
+
+    .search-icon {
+      color: #ff4081;
+      font-size: 18px;
+      flex-shrink: 0;
+      pointer-events: none;
     }
 
     #search {
-      width: 25%;
+      width: 100%;
       padding: 12px 16px;
       border-radius: 20px;
       border: 2px solid transparent;
@@ -75,7 +85,7 @@
       backdrop-filter: blur(10px);
       color: #fff;
       font-size: 14px;
-      transition: width 0.4s ease, border-color 0.4s ease;
+      transition: all 0.4s ease;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       animation: neonGlow 2s infinite;
       position: relative;
@@ -86,7 +96,6 @@
     }
 
     #search:focus {
-      width: 65%;
       background: rgba(255, 255, 255, 0.15);
       box-shadow: 0 0 20px rgba(255, 64, 129, 0.6), inset 0 0 10px rgba(255, 64, 129, 0.2);
     }
@@ -111,7 +120,7 @@
     .social-icons {
       position: fixed;
       top: 20px;
-      left: calc(20px + 280px);
+      right: 20px;
       display: flex;
       flex-direction: row;
       gap: 10px;
@@ -287,6 +296,7 @@
 <body>
   <!-- Search Container and Social Media Icons -->
   <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
     <input type="text" id="search" placeholder="Let's dive in ....">
   </div>
 
