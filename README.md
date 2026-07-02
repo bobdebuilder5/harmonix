@@ -17,9 +17,10 @@
     nav {
       position: fixed;
       bottom: 0;
-      width: 100%;
+      width: 80%;
+      left: 10%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       background: #000000;
       padding: 15px 30px;
@@ -28,8 +29,7 @@
     }
 
     nav h1 {
-      font-size: 24px;
-      color: #ff4081;
+      display: none;
     }
 
     nav ul {
@@ -38,6 +38,8 @@
       gap: 20px;
       margin: 0;
       padding: 0;
+      width: 100%;
+      justify-content: center;
     }
 
     nav ul li a {
@@ -51,7 +53,7 @@
     }
 
     nav ul li a:hover {
-      color: #ff4081;
+      color: #ff9bc3;
     }
 
     /* Search Container - Centered with Icon and Input */
@@ -69,7 +71,7 @@
     }
 
     .search-icon {
-      color: #ff4081;
+      color: #ff9bc3;
       font-size: 18px;
       flex-shrink: 0;
       pointer-events: none;
@@ -97,22 +99,22 @@
 
     #search:focus {
       background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 20px rgba(255, 64, 129, 0.6), inset 0 0 10px rgba(255, 64, 129, 0.2);
+      box-shadow: 0 0 20px rgba(255, 155, 195, 0.6), inset 0 0 10px rgba(255, 155, 195, 0.2);
     }
 
     /* Neon Glimmering and Glittering Animation */
     @keyframes neonGlow {
       0% {
-        border-color: #ff4081;
-        box-shadow: 0 0 10px rgba(255, 64, 129, 0.5), inset 0 0 5px rgba(255, 64, 129, 0.1);
+        border-color: #ff9bc3;
+        box-shadow: 0 0 10px rgba(255, 155, 195, 0.5), inset 0 0 5px rgba(255, 155, 195, 0.1);
       }
       50% {
-        border-color: #ff10a0;
-        box-shadow: 0 0 20px rgba(255, 64, 129, 0.8), inset 0 0 10px rgba(255, 64, 129, 0.3);
+        border-color: #ffb3d9;
+        box-shadow: 0 0 20px rgba(255, 155, 195, 0.8), inset 0 0 10px rgba(255, 155, 195, 0.3);
       }
       100% {
-        border-color: #ff4081;
-        box-shadow: 0 0 10px rgba(255, 64, 129, 0.5), inset 0 0 5px rgba(255, 64, 129, 0.1);
+        border-color: #ff9bc3;
+        box-shadow: 0 0 10px rgba(255, 155, 195, 0.5), inset 0 0 5px rgba(255, 155, 195, 0.1);
       }
     }
 
@@ -136,12 +138,12 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 50%;
-      border: 2px solid #ff4081;
-      color: #ff4081;
+      border: 2px solid #ff9bc3;
+      color: #ff9bc3;
       font-size: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+      box-shadow: 0 4px 15px rgba(255, 155, 195, 0.4);
       animation: socialGlitter 2.5s infinite;
       text-decoration: none;
     }
@@ -172,30 +174,30 @@
 
     @keyframes socialGlitter {
       0%, 100% {
-        border-color: #ff4081;
-        box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+        border-color: #ff9bc3;
+        box-shadow: 0 4px 15px rgba(255, 155, 195, 0.4);
       }
       50% {
-        border-color: #ff10a0;
-        box-shadow: 0 0 20px rgba(255, 64, 129, 0.8), 0 0 30px rgba(255, 64, 129, 0.5);
+        border-color: #ffb3d9;
+        box-shadow: 0 0 20px rgba(255, 155, 195, 0.8), 0 0 30px rgba(255, 155, 195, 0.5);
       }
     }
 
     .social-icon:hover {
       transform: scale(1.15);
-      box-shadow: 0 6px 25px rgba(255, 64, 129, 0.8);
-      border-color: #ff10a0;
+      box-shadow: 0 6px 25px rgba(255, 155, 195, 0.8);
+      border-color: #ffb3d9;
     }
 
     /* Hero Section Styles */
     .hero-section {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 64, 129, 0.3)), 
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 155, 195, 0.2)), 
                   url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=400&fit=crop') center/cover no-repeat;
       padding: 80px 40px;
       text-align: center;
       margin: 20px;
       border-radius: 15px;
-      box-shadow: 0 8px 32px rgba(255, 64, 129, 0.3);
+      box-shadow: 0 8px 32px rgba(255, 155, 195, 0.2);
       animation: slideInDown 0.8s ease;
     }
 
@@ -209,7 +211,7 @@
 
     .hero-section p {
       font-size: 24px;
-      color: #ff4081;
+      color: #ff9bc3;
       margin: 0;
       font-weight: 300;
       letter-spacing: 2px;
@@ -231,7 +233,7 @@
       padding: 40px;
       padding-bottom: 120px;
       text-align: center;
-      background: linear-gradient(135deg, #ff4081, #ff1493);
+      background: linear-gradient(135deg, #ff9bc3, #ffb3d9);
       min-height: calc(100vh - 180px);
     }
 
@@ -280,8 +282,8 @@
 
     button:hover {
       background: #fff;
-      color: #ff4081;
-      border-color: #ff4081;
+      color: #ff9bc3;
+      border-color: #ff9bc3;
     }
 
     button.hidden {
@@ -290,6 +292,105 @@
 
     button i {
       font-size: 18px;
+    }
+
+    /* Hexagonal Slider Styles */
+    .slider-container {
+      margin: 60px 20px;
+      overflow: hidden;
+      perspective: 1200px;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      gap: 20px;
+      transform-style: preserve-3d;
+      animation: autoScroll 10s infinite linear;
+    }
+
+    .hexagon-slide {
+      flex: 0 0 calc(40% - 16px);
+      min-width: calc(40% - 16px);
+      height: 300px;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      transform: skewX(-15deg);
+      box-shadow: 0 8px 32px rgba(255, 155, 195, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hexagon-slide:hover {
+      transform: skewX(-15deg) scale(1.05);
+      box-shadow: 0 12px 48px rgba(255, 155, 195, 0.6);
+    }
+
+    .hexagon-slide > div {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+      padding: 30px 20px;
+      z-index: 2;
+      transform: skewX(15deg);
+      color: #fff;
+      text-align: left;
+    }
+
+    .slide-content h3 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      color: #ff9bc3;
+    }
+
+    .slide-content p {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    @keyframes autoScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-calc(40% + 20px));
+      }
+    }
+
+    .slider-wrapper:hover {
+      animation-play-state: paused;
+    }
+
+    /* Slider Indicators */
+    .slider-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 155, 195, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+      background: #ff9bc3;
+      transform: scale(1.3);
     }
   </style>
 </head>
@@ -333,6 +434,56 @@
       <p>Discover trending tracks and curated playlists.</p>
       <button class="searchable" data-keywords="play sound music" onclick="playSound()"><i class="fas fa-play"></i> Play Sound</button>
       <button class="searchable" data-keywords="stop sound pause" onclick="stopSound()"><i class="fas fa-stop"></i> Stop Sound</button>
+
+      <!-- Hexagonal Slider -->
+      <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+          <div class="hexagon-slide">
+            <div style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=300&fit=crop');"></div>
+            <div class="slide-content">
+              <h3>🎵 Summer Vibes</h3>
+              <p>"Music is the universal language of mankind."</p>
+            </div>
+          </div>
+          <div class="hexagon-slide">
+            <div style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&h=300&fit=crop');"></div>
+            <div class="slide-content">
+              <h3>🎸 Electric Dreams</h3>
+              <p>"Melody is the soul of music."</p>
+            </div>
+          </div>
+          <div class="hexagon-slide">
+            <div style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=500&h=300&fit=crop');"></div>
+            <div class="slide-content">
+              <h3>🎹 Jazz Night</h3>
+              <p>"Without music, life would be a mistake."</p>
+            </div>
+          </div>
+          <div class="hexagon-slide">
+            <div style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=500&h=300&fit=crop');"></div>
+            <div class="slide-content">
+              <h3>🎤 Live Sessions</h3>
+              <p>"Music gives a soul to the universe."</p>
+            </div>
+          </div>
+          <div class="hexagon-slide">
+            <div style="background-image: url('https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=500&h=300&fit=crop');"></div>
+            <div class="slide-content">
+              <h3>🎧 Chill Beats</h3>
+              <p>"Music washes away from the soul the dust of everyday life."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Indicators -->
+      <div class="slider-indicators">
+        <div class="indicator active" onclick="goToSlide(0)"></div>
+        <div class="indicator" onclick="goToSlide(1)"></div>
+        <div class="indicator" onclick="goToSlide(2)"></div>
+        <div class="indicator" onclick="goToSlide(3)"></div>
+        <div class="indicator" onclick="goToSlide(4)"></div>
+      </div>
     </section>
 
     <section id="you">
@@ -358,7 +509,6 @@
   </main>
 
   <nav>
-    <h1><i class="fas fa-music"></i> Harmonix</h1>
     <ul>
       <li><a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="#" onclick="showPage('you')"><i class="fas fa-user"></i> You</a></li>
@@ -420,6 +570,43 @@
       const synth = new Tone.Synth().toDestination();
       synth.triggerAttackRelease("C4", "8n");
     });
+
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hexagon-slide');
+    const totalSlides = slides.length;
+
+    function goToSlide(n) {
+      currentSlide = n;
+      updateSlider();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
+
+    function updateSlider() {
+      const sliderWrapper = document.getElementById('sliderWrapper');
+      const offset = currentSlide * (40 + 2.4);
+      sliderWrapper.style.animation = 'none';
+      setTimeout(() => {
+        sliderWrapper.style.transform = `translateX(-${offset}%)`;
+      }, 10);
+      
+      // Update indicators
+      document.querySelectorAll('.indicator').forEach((ind, idx) => {
+        ind.classList.toggle('active', idx === currentSlide);
+      });
+
+      // Reset animation
+      setTimeout(() => {
+        sliderWrapper.style.animation = 'autoScroll 10s infinite linear';
+      }, 300);
+    }
+
+    // Auto rotate slides every 10 seconds
+    setInterval(nextSlide, 10000);
   </script>
 </body>
 </html>
