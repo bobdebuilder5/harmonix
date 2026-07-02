@@ -26,7 +26,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #000000;
+      /* removed black background per request */
+      background: transparent;
       padding: 15px 30px;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
       z-index: 999;
@@ -304,10 +305,10 @@
       font-size: 18px;
     }
 
-    /* Hexagonal Slider Styles - Diagonal Alignment */
+    /* Rectangular Slider Styles */
     .slider-container {
       margin: 60px 20px;
-      overflow: visible;
+      overflow: hidden;
       perspective: 1200px;
     }
 
@@ -315,29 +316,28 @@
       display: flex;
       gap: 20px;
       transform-style: preserve-3d;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
+      align-items: center;
     }
 
     .hexagon-slide {
-      flex: 0 0 300px;
-      height: 300px;
+      /* renamed but still used as a class: rectangular slides now */
+      flex: 0 0 320px;
+      height: 200px;
       position: relative;
-      border-radius: 20px;
+      border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(255, 155, 195, 0.3);
       cursor: pointer;
       transition: all 0.3s ease;
-      transform: rotate(30deg);
-      margin: 50px 20px;
-    }
-
-    .hexagon-slide:nth-child(odd) {
-      margin-top: 100px;
+      transform: none; /* removed diagonal/rotation */
+      margin: 0;
+      background: #111;
     }
 
     .hexagon-slide:hover {
-      transform: rotate(30deg) scale(1.05);
+      transform: scale(1.02);
       box-shadow: 0 12px 48px rgba(255, 155, 195, 0.6);
     }
 
@@ -354,7 +354,7 @@
       left: 0;
       right: 0;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-      padding: 30px 20px;
+      padding: 20px;
       z-index: 2;
       color: #fff;
       text-align: left;
@@ -362,14 +362,14 @@
 
     .slide-content h3 {
       margin: 0 0 10px 0;
-      font-size: 20px;
+      font-size: 18px;
       color: #ff9bc3;
       font-family: Arial, sans-serif;
     }
 
     .slide-content p {
       margin: 0;
-      font-size: 14px;
+      font-size: 13px;
       color: #fff;
       font-family: Arial, sans-serif;
     }
@@ -438,7 +438,7 @@
       <button class="searchable" data-keywords="play sound music" onclick="playSound()"><i class="fas fa-play"></i> Play Sound</button>
       <button class="searchable" data-keywords="stop sound pause" onclick="stopSound()"><i class="fas fa-stop"></i> Stop Sound</button>
 
-      <!-- Hexagonal Slider -->
+      <!-- Rectangular Slider -->
       <div class="slider-container">
         <div class="slider-wrapper" id="sliderWrapper">
           <div class="hexagon-slide">
@@ -592,14 +592,24 @@
     function updateSlider() {
       const sliderWrapper = document.getElementById('sliderWrapper');
       
+      // Optionally, scroll to make the current slide visible — center it
+      const active = slides[currentSlide];
+      if (active) {
+        // center slide in wrapper
+        const wrapperRect = sliderWrapper.getBoundingClientRect();
+        const activeRect = active.getBoundingClientRect();
+        const offset = active.offsetLeft - (wrapperRect.width/2 - activeRect.width/2);
+        sliderWrapper.scrollTo({ left: offset, behavior: 'smooth' });
+      }
+
       // Update indicators
       document.querySelectorAll('.indicator').forEach((ind, idx) => {
         ind.classList.toggle('active', idx === currentSlide);
       });
     }
 
-    // Auto rotate slides every 10 seconds
-    setInterval(nextSlide, 10000);
+    // Auto rotate slides every 30 seconds (was 10s)
+    setInterval(nextSlide, 30000);
   </script>
 </body>
 </html>
