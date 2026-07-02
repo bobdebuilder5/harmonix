@@ -6,8 +6,12 @@
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    * {
+      font-family: Arial, sans-serif;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: #000000;
       color: #fff;
       margin: 0;
@@ -40,6 +44,7 @@
       padding: 0;
       width: 100%;
       justify-content: center;
+      font-family: Arial, sans-serif;
     }
 
     nav ul li a {
@@ -50,24 +55,23 @@
       align-items: center;
       gap: 8px;
       transition: color 0.3s ease;
+      font-family: Arial, sans-serif;
     }
 
     nav ul li a:hover {
       color: #ff9bc3;
     }
 
-    /* Search Container - Centered with Icon and Input */
+    /* Search Container - Top Left Corner */
     .search-container {
       position: fixed;
       top: 20px;
-      left: 25%;
-      right: 25%;
+      left: 20px;
       display: flex;
       align-items: center;
       gap: 12px;
       z-index: 1000;
-      width: 50%;
-      transform: translateX(0);
+      width: 300px;
     }
 
     .search-icon {
@@ -91,6 +95,7 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       animation: neonGlow 2s infinite;
       position: relative;
+      font-family: Arial, sans-serif;
     }
 
     #search::placeholder {
@@ -207,6 +212,7 @@
       color: #fff;
       margin: 0 0 15px 0;
       text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      font-family: Arial, sans-serif;
     }
 
     .hero-section p {
@@ -216,6 +222,7 @@
       font-weight: 300;
       letter-spacing: 2px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      font-family: Arial, sans-serif;
     }
 
     @keyframes slideInDown {
@@ -253,6 +260,7 @@
       font-size: 28px;
       margin-bottom: 20px;
       color: #fff;
+      font-family: Arial, sans-serif;
     }
 
     section h2 i {
@@ -263,6 +271,7 @@
       color: #fff;
       font-size: 18px;
       margin-bottom: 20px;
+      font-family: Arial, sans-serif;
     }
 
     button {
@@ -278,6 +287,7 @@
       align-items: center;
       gap: 8px;
       transition: all 0.3s ease;
+      font-family: Arial, sans-serif;
     }
 
     button:hover {
@@ -294,10 +304,10 @@
       font-size: 18px;
     }
 
-    /* Hexagonal Slider Styles */
+    /* Hexagonal Slider Styles - Diagonal Alignment */
     .slider-container {
       margin: 60px 20px;
-      overflow: hidden;
+      overflow: visible;
       perspective: 1200px;
     }
 
@@ -305,24 +315,29 @@
       display: flex;
       gap: 20px;
       transform-style: preserve-3d;
-      animation: autoScroll 10s infinite linear;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .hexagon-slide {
-      flex: 0 0 calc(40% - 16px);
-      min-width: calc(40% - 16px);
+      flex: 0 0 300px;
       height: 300px;
       position: relative;
       border-radius: 20px;
       overflow: hidden;
-      transform: skewX(-15deg);
       box-shadow: 0 8px 32px rgba(255, 155, 195, 0.3);
       cursor: pointer;
       transition: all 0.3s ease;
+      transform: rotate(30deg);
+      margin: 50px 20px;
+    }
+
+    .hexagon-slide:nth-child(odd) {
+      margin-top: 100px;
     }
 
     .hexagon-slide:hover {
-      transform: skewX(-15deg) scale(1.05);
+      transform: rotate(30deg) scale(1.05);
       box-shadow: 0 12px 48px rgba(255, 155, 195, 0.6);
     }
 
@@ -341,7 +356,6 @@
       background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
       padding: 30px 20px;
       z-index: 2;
-      transform: skewX(15deg);
       color: #fff;
       text-align: left;
     }
@@ -350,25 +364,14 @@
       margin: 0 0 10px 0;
       font-size: 20px;
       color: #ff9bc3;
+      font-family: Arial, sans-serif;
     }
 
     .slide-content p {
       margin: 0;
       font-size: 14px;
       color: #fff;
-    }
-
-    @keyframes autoScroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-calc(40% + 20px));
-      }
-    }
-
-    .slider-wrapper:hover {
-      animation-play-state: paused;
+      font-family: Arial, sans-serif;
     }
 
     /* Slider Indicators */
@@ -588,21 +591,11 @@
 
     function updateSlider() {
       const sliderWrapper = document.getElementById('sliderWrapper');
-      const offset = currentSlide * (40 + 2.4);
-      sliderWrapper.style.animation = 'none';
-      setTimeout(() => {
-        sliderWrapper.style.transform = `translateX(-${offset}%)`;
-      }, 10);
       
       // Update indicators
       document.querySelectorAll('.indicator').forEach((ind, idx) => {
         ind.classList.toggle('active', idx === currentSlide);
       });
-
-      // Reset animation
-      setTimeout(() => {
-        sliderWrapper.style.animation = 'autoScroll 10s infinite linear';
-      }, 300);
     }
 
     // Auto rotate slides every 10 seconds
