@@ -8,18 +8,23 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #000000, #ff4081);
+      background: #000000;
       color: #fff;
       margin: 0;
       padding: 0;
     }
 
     nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0,0,0,0.8);
+      background: #000000;
       padding: 15px 30px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
     }
 
     nav h1 {
@@ -102,7 +107,7 @@
       }
     }
 
-    /* Social Media Icons - Horizontal Layout Next to Search */
+    /* Social Media Icons - Circular and Smaller */
     .social-icons {
       position: fixed;
       top: 20px;
@@ -114,17 +119,17 @@
     }
 
     .social-icon {
-      width: 50px;
-      height: 50px;
+      width: 35px;
+      height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
-      border-radius: 0.25cm;
+      border-radius: 50%;
       border: 2px solid #ff4081;
       color: #ff4081;
-      font-size: 24px;
+      font-size: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
@@ -146,6 +151,14 @@
 
     .social-icon:nth-child(4) {
       animation-delay: 0.9s;
+    }
+
+    .social-icon:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+
+    .social-icon:nth-child(6) {
+      animation-delay: 1.5s;
     }
 
     @keyframes socialGlitter {
@@ -207,7 +220,10 @@
 
     main {
       padding: 40px;
+      padding-bottom: 120px;
       text-align: center;
+      background: linear-gradient(135deg, #ff4081, #ff1493);
+      min-height: calc(100vh - 180px);
     }
 
     section {
@@ -225,29 +241,38 @@
       gap: 12px;
       font-size: 28px;
       margin-bottom: 20px;
+      color: #fff;
     }
 
     section h2 i {
-      color: #ff4081;
+      color: #fff;
+    }
+
+    section p {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
     button {
-      background: #ff4081;
-      border: none;
+      background: #000000;
+      border: 2px solid #fff;
       padding: 10px 20px;
       margin: 10px;
-      color: white;
+      color: #fff;
       font-size: 16px;
       cursor: pointer;
       border-radius: 5px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     button:hover {
-      background: #f50057;
+      background: #fff;
+      color: #ff4081;
+      border-color: #ff4081;
     }
 
     button.hidden {
@@ -278,17 +303,13 @@
     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
       <i class="fab fa-linkedin"></i>
     </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="X">
+      <i class="fab fa-x-twitter"></i>
+    </a>
   </div>
-
-  <nav>
-    <h1><i class="fas fa-music"></i> Harmonix</h1>
-    <ul>
-      <li><a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#" onclick="showPage('you')"><i class="fas fa-user"></i> You</a></li>
-      <li><a href="#" onclick="showPage('calendar')"><i class="fas fa-calendar-alt"></i> Event Calendar</a></li>
-      <li><a href="#" onclick="showPage('collections')"><i class="fas fa-compact-disc"></i> Collections</a></li>
-    </ul>
-  </nav>
 
   <!-- Hero Section -->
   <div class="hero-section">
@@ -325,6 +346,16 @@
       <button class="searchable" data-keywords="new releases music"><i class="fas fa-music"></i> New Releases</button>
     </section>
   </main>
+
+  <nav>
+    <h1><i class="fas fa-music"></i> Harmonix</h1>
+    <ul>
+      <li><a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#" onclick="showPage('you')"><i class="fas fa-user"></i> You</a></li>
+      <li><a href="#" onclick="showPage('calendar')"><i class="fas fa-calendar-alt"></i> Event Calendar</a></li>
+      <li><a href="#" onclick="showPage('collections')"><i class="fas fa-compact-disc"></i> Collections</a></li>
+    </ul>
+  </nav>
 
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
