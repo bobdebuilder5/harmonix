@@ -49,53 +49,67 @@
       color: #ff4081;
     }
 
+    /* Search Container - Top Left with Horizontal Layout */
     .search-container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .search-icon {
-      color: #ff4081;
-      font-size: 18px;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .search-icon:hover {
-      color: #fff;
-    }
-
-    #search {
-      width: 5%;
-      transition: width 0.4s ease;
-      padding: 8px 12px;
-      border-radius: 20px;
-      border: none;
-      outline: none;
-      background: rgba(255, 255, 255, 0.9);
-      color: #000;
-    }
-
-    #search:focus {
-      width: 45%;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
-    }
-
-    #search::placeholder {
-      color: #999;
-    }
-
-    /* Social Media Icons Styles */
-    .social-icons {
       position: fixed;
       top: 20px;
       left: 20px;
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      align-items: center;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    #search {
+      width: 25%;
+      padding: 12px 16px;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 14px;
+      transition: width 0.4s ease, border-color 0.4s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: neonGlow 2s infinite;
+      position: relative;
+    }
+
+    #search::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    #search:focus {
+      width: 65%;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 20px rgba(255, 64, 129, 0.6), inset 0 0 10px rgba(255, 64, 129, 0.2);
+    }
+
+    /* Neon Glimmering and Glittering Animation */
+    @keyframes neonGlow {
+      0% {
+        border-color: #ff4081;
+        box-shadow: 0 0 10px rgba(255, 64, 129, 0.5), inset 0 0 5px rgba(255, 64, 129, 0.1);
+      }
+      50% {
+        border-color: #ff10a0;
+        box-shadow: 0 0 20px rgba(255, 64, 129, 0.8), inset 0 0 10px rgba(255, 64, 129, 0.3);
+      }
+      100% {
+        border-color: #ff4081;
+        box-shadow: 0 0 10px rgba(255, 64, 129, 0.5), inset 0 0 5px rgba(255, 64, 129, 0.1);
+      }
+    }
+
+    /* Social Media Icons - Horizontal Layout Next to Search */
+    .social-icons {
+      position: fixed;
+      top: 20px;
+      left: calc(20px + 280px);
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
       z-index: 1000;
     }
 
@@ -105,14 +119,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff;
-      border-radius: 50%;
-      color: #000;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 0.25cm;
+      border: 2px solid #ff4081;
+      color: #ff4081;
       font-size: 24px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      animation: bounce 2s infinite;
+      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+      animation: socialGlitter 2.5s infinite;
       text-decoration: none;
     }
 
@@ -121,29 +137,32 @@
     }
 
     .social-icon:nth-child(2) {
-      animation-delay: 0.2s;
+      animation-delay: 0.3s;
     }
 
     .social-icon:nth-child(3) {
-      animation-delay: 0.4s;
+      animation-delay: 0.6s;
     }
 
     .social-icon:nth-child(4) {
-      animation-delay: 0.6s;
+      animation-delay: 0.9s;
+    }
+
+    @keyframes socialGlitter {
+      0%, 100% {
+        border-color: #ff4081;
+        box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+      }
+      50% {
+        border-color: #ff10a0;
+        box-shadow: 0 0 20px rgba(255, 64, 129, 0.8), 0 0 30px rgba(255, 64, 129, 0.5);
+      }
     }
 
     .social-icon:hover {
       transform: scale(1.15);
-      box-shadow: 0 6px 14px rgba(255, 64, 129, 0.5);
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      box-shadow: 0 6px 25px rgba(255, 64, 129, 0.8);
+      border-color: #ff10a0;
     }
 
     /* Hero Section Styles */
@@ -241,9 +260,13 @@
   </style>
 </head>
 <body>
-  <!-- Social Media Icons -->
+  <!-- Search Container and Social Media Icons -->
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Let's dive in ....">
+  </div>
+
   <div class="social-icons">
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+    <a href="https://instagram.com/itshunt0" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
       <i class="fab fa-instagram"></i>
     </a>
     <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="TikTok">
@@ -265,10 +288,6 @@
       <li><a href="#" onclick="showPage('calendar')"><i class="fas fa-calendar-alt"></i> Event Calendar</a></li>
       <li><a href="#" onclick="showPage('collections')"><i class="fas fa-compact-disc"></i> Collections</a></li>
     </ul>
-    <div class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" id="search" placeholder="Let's dive in ....">
-    </div>
   </nav>
 
   <!-- Hero Section -->
@@ -324,11 +343,6 @@
     const searchInput = document.getElementById('search');
     searchInput.addEventListener('input', (e) => {
       filterButtons(e.target.value.toLowerCase());
-    });
-
-    // Focus search input when search icon is clicked
-    document.querySelector('.search-icon').addEventListener('click', () => {
-      searchInput.focus();
     });
 
     function filterButtons(query) {
