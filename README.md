@@ -16,21 +16,22 @@
       color: #fff;
       margin: 0;
       padding: 0;
+      display: flex;
     }
 
+    /* Sidebar Navigation */
     nav {
       position: fixed;
-      bottom: 0;
-      width: 80%;
-      left: 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* removed black background per request */
-      background: transparent;
-      padding: 15px 30px;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 250px;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
       z-index: 999;
+      padding: 30px 0;
+      overflow-y: auto;
     }
 
     nav h1 {
@@ -40,12 +41,16 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      flex-direction: column;
+      gap: 0;
       margin: 0;
       padding: 0;
       width: 100%;
-      justify-content: center;
       font-family: Arial, sans-serif;
+    }
+
+    nav ul li {
+      width: 100%;
     }
 
     nav ul li a {
@@ -54,20 +59,36 @@
       font-weight: bold;
       display: flex;
       align-items: center;
-      gap: 8px;
-      transition: color 0.3s ease;
+      gap: 15px;
+      transition: all 0.3s ease;
       font-family: Arial, sans-serif;
+      padding: 15px 20px;
+      border-left: 3px solid transparent;
     }
 
     nav ul li a:hover {
       color: #ff9bc3;
+      background: rgba(255, 155, 195, 0.1);
+      border-left-color: #ff9bc3;
+      padding-left: 22px;
+    }
+
+    /* Adjust main content area */
+    main {
+      margin-left: 250px;
+      flex: 1;
+      padding: 40px;
+      padding-bottom: 120px;
+      text-align: center;
+      background: linear-gradient(135deg, #ff9bc3, #ffb3d9);
+      min-height: calc(100vh - 180px);
     }
 
     /* Search Container - Top Left Corner */
     .search-container {
       position: fixed;
       top: 20px;
-      left: 20px;
+      left: 270px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -237,14 +258,6 @@
       }
     }
 
-    main {
-      padding: 40px;
-      padding-bottom: 120px;
-      text-align: center;
-      background: linear-gradient(135deg, #ff9bc3, #ffb3d9);
-      min-height: calc(100vh - 180px);
-    }
-
     section {
       display: none;
     }
@@ -398,6 +411,16 @@
   </style>
 </head>
 <body>
+  <!-- Sidebar Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#" onclick="showPage('you')"><i class="fas fa-user"></i> You</a></li>
+      <li><a href="#" onclick="showPage('calendar')"><i class="fas fa-calendar-alt"></i> Event Calendar</a></li>
+      <li><a href="#" onclick="showPage('collections')"><i class="fas fa-compact-disc"></i> Collections</a></li>
+    </ul>
+  </nav>
+
   <!-- Search Container and Social Media Icons -->
   <div class="search-container">
     <i class="fas fa-search search-icon"></i>
@@ -510,15 +533,6 @@
       <button class="searchable" data-keywords="new releases music"><i class="fas fa-music"></i> New Releases</button>
     </section>
   </main>
-
-  <nav>
-    <ul>
-      <li><a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#" onclick="showPage('you')"><i class="fas fa-user"></i> You</a></li>
-      <li><a href="#" onclick="showPage('calendar')"><i class="fas fa-calendar-alt"></i> Event Calendar</a></li>
-      <li><a href="#" onclick="showPage('collections')"><i class="fas fa-compact-disc"></i> Collections</a></li>
-    </ul>
-  </nav>
 
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
