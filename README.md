@@ -441,7 +441,7 @@ box-sizing: border-box;
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="X">
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="X">
           <i class="fab fa-x-twitter"></i>
         </a>
       </div>
