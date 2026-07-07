@@ -444,7 +444,7 @@ box-sizing: border-box;
           <i class="fab fa-youtube"></i>
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="X">
-          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-twitter"></i>
         </a>
       </div>
     </div>
