@@ -483,7 +483,7 @@ box-sizing: border-box;
           <div class="hexagon-slide">
             <div style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&h=300&fit=crop');"></div>
             <div class="slide-content">
-              <h3>🎸 Electric Dreams</h3>
+              <h3> Electric Dreams</h3>
               <p>"Melody is the soul of music."</p>
             </div>
           </div>
@@ -491,7 +491,7 @@ box-sizing: border-box;
           <div class="hexagon-slide">
             <div style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=500&h=300&fit=crop');"></div>
             <div class="slide-content">
-              <h3>🎹 Jazz Night</h3>
+              <h3> Jazz Night</h3>
               <p>"Without music, life would be a mistake."</p>
             </div>
           </div>
@@ -507,7 +507,7 @@ box-sizing: border-box;
           <div class="hexagon-slide">
             <div style="background-image: url('https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=500&h=300&fit=crop');"></div>
             <div class="slide-content">
-              <h3>🎧 Chill Beats</h3>
+              <h3>Chill Beats</h3>
               <p>"Music washes away from the soul the dust of everyday life."</p>
             </div>
           </div>
